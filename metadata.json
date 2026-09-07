@@ -1,0 +1,6 @@
+{
+  "name": "Layout Architect",
+  "description": "Modern website for Layout Architect - Architecture, Engineering & Interior Design Firm specializing in KDA approvals, structural design, and construction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
