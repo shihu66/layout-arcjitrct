@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layout Architect</title>
     <script>
-      // Single Page App redirect for GitHub Pages
-      // Ensures direct hits or subpaths redirect cleanly to the root with hash router
-      sessionStorage.redirect = location.href;
+      // Single Page Application redirect for GitHub Pages to HashRouter
+      const path = window.location.pathname;
+      const parts = path.split('/').filter(Boolean);
+      // If deployed at https://username.github.io/repository-name/
+      const repo = parts.length > 0 ? '/' + parts[0] : '';
+      const route = parts.slice(1).join('/');
+      if (route) {
+        window.location.replace(repo + '/#/' + route + window.location.search);
+      } else {
+        window.location.replace(repo + '/' + window.location.search);
+      }
     </script>
-    <meta http-equiv="refresh" content="0;URL='./'">
   </head>
-  <body>
+  <body style="font-family: sans-serif; padding: 2rem; text-align: center; color: #333;">
     <p>Redirecting to Layout Architect...</p>
   </body>
 </html>
